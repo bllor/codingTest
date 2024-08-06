@@ -1,0 +1,7 @@
+흉부외과 또는 일반외과 의사 목록 출력하기
+
+select dr_name, dr_id,mcdp_cd, left(hire_ymd,10) as hire_ymd from doctor a where a.mcdp_cd in ('cs','gs')
+order by hire_ymd desc, dr_name
+;
+
+날짜를 출력하는 방법으로 date_format(hire_ymd, '%y-%m-%d')로 변경할 수 있다.
