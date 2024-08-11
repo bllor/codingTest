@@ -1,0 +1,11 @@
+경기도에 위치한 식품창고 목록 출력하기
+
+SELECT a.warehouse_id, a.warehouse_name, a.address,
+case
+    when a.freezer_yn is null then 'N' else a.freezer_yn 
+end as freezer_yn
+from food_warehouse a where a.address like('경기도%') ;
+
+*
+coalesce(a,b) a가 null일 경우 b로 대체
+ifnull(a,b) a의 값이 null일 경우 b로 대체
