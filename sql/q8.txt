@@ -1,0 +1,10 @@
+[자동차 평균 대여 기간 구하기]
+SELECT car_id, round(avg(datediff(end_date,start_date)+1),1) as average_duration from car_rental_company_rental_history 
+group by car_id
+having average_duration >=7
+order by average_duration desc, car_id desc
+;
+
+datediff(end_date,start_date) : 끝나는 날짜와 시작하는 날짜의 차이를 알려줌
+datediff('24-08-03','24-08-01') 일 경우 2를 반환하는데 빌린기간은 8/1,8/2,8,3일까지 이므로
+기간을 구할 때는 datediff(end_Date,start_date)+1을 해줘야 한다.
