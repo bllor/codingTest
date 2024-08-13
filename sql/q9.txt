@@ -1,0 +1,8 @@
+select dr_name, dr_id, mcdp_cd, date_format(hire_ymd,'%Y-%m-%d') as hire_ymd from doctor
+where mcdp_cd in ('cs','gs')
+order by hire_ymd desc, dr_name
+;
+
+date_format(hire_ymd,'%Y-%m-%d')
+Y를 대문자로 해야지 2024처럼 나오고,
+소문자로 쓸 경우 24만 출력된다.
