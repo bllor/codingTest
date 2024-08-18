@@ -1,0 +1,17 @@
+# SELECT substring(start_date, 7,1) as month, car_id,count(car_id) as records from car_rental_company_rental_history h
+# where start_date >'2022-08-01' and end_date<'2022-11-01'
+# group by car_id
+# having count(car_id)>=5
+# order by month, car_id desc
+# ;
+
+SELECT month(start_date) as month, car_id, count(history_id) as records
+from CAR_RENTAL_COMPANY_RENTAL_HISTORY
+where start_date>="2022-08-01" and start_date<"2022-11-01" 
+and car_id in 
+    (select car_id from CAR_RENTAL_COMPANY_RENTAL_HISTORY where start_date>="2022-08-01" 
+    and start_date<"2022-11-01" group by car_id having count(history_id)>4) 
+//history가 대여이력이므로 4개 초과라고 하면 5번 이상 빌린 것이 된다.
+group by month, car_id
+having records >0 // month와 car_id로 그룹을 묶은뒤 history_id가 0이라는 것은 특정월에 빌린게 없다는 것이 된다.
+order by month, car_id desc
