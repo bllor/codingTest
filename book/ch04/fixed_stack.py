@@ -62,3 +62,13 @@ class FixedStack:
             print('no data')
         else:
             print(self.stk[:self.ptr]) #0번부터 ptr-1번까지 출력        
+            
+            
+'''
+__len()__이나 __contains()__는 다른 함수들과 다르게 정의 되어 있는데
+다음과 같이 함수를 정의할 경우, 클래스형의 인스턴스 obj에 대한 __len()__함수를 호출하는
+obj.__len()__를 간단히 len(obj)로 사용할 수 있다.
+
+밑줄 2개인 더블 언더스코어를 줄여서 던더라고 한다.
+
+'''
