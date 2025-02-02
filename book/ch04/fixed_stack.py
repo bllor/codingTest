@@ -56,6 +56,10 @@ class FixedStack:
     
     def __contains__(self,value:Any)->bool:
         return self.count(value)
+    '''
+    __contains__()는 파이썬의 내장함수로,
+    자신이 만든 클래스에 해당 함수가 있을 경우, 클래스의 객체에 in연산자를 바로 사용할 수 있다.
+    '''
 
     def dump(self)->None:
         if self.is_empty():

@@ -1,0 +1,25 @@
+s = FixedStack(64)
+def __init__(self, capacity: int = 256)->None:
+        self.stk = [None] * capacity
+        self.capacity = capacity
+        self.ptr = 0
+푸시를 했을 경우.
+1.s.push(x)
+def push(self, value:Any) -> None:
+        if self.is_full():
+        (
+        def is_full(self)->bool:
+            return self.ptr>=self.capacity
+        )
+            raise FixedStack.Full
+        self.stk[self.ptr] = value
+        self.ptr += 1
+push메서드에서의 self는 s가 된다.
+s.is_full()이 실행되고, 문제가 없을 경우
+s.stk[s.ptr] = value
+s.ptr+=1이 된다.
+*
+self는 파이썬 클래스에서 메서드를 정의할 때
+첫 번째 매개변수로 자동으로 전달되는 객체 자신을 참조하는 변수입니다.
+
+
