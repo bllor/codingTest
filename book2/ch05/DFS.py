@@ -15,7 +15,7 @@ def dfs(graph,v,visited):
     print(v, end='')
     
     #현재 노드와 연결된 다른 노드를 재귀적으로 방문
-    for i in graph[v]: # [2,3,8],[1,7]처럼 들어감
+    for i in graph[v]: # [2,3,8],[1,7]이 들어가고 출력되는 i는 배열의 0번부터 출력
         if not visited[i]:
             dfs(graph,i,visited)
 
