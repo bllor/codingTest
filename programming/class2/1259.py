@@ -7,7 +7,6 @@ while True:
      else:
           arr.append(a)
      
-# print(arr)
 arr2= [True]*len(arr)
 for i in range(len(arr)):
      # print(arr[i])
